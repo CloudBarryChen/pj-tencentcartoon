@@ -37,7 +37,8 @@
 7. 易堃 - 5
 
 ## 3. 开发说明
-由于页面较少，路由自定，用 vue-cli 以组件式开发，git 管理版本
+1. 由于页面较少，路由自定，用 vue-cli 以组件式开发，git 管理版本
+2. 页面 rem 布局，采用 iphone5 分辨率
 
 ## 4. github 提交地址
 https://github.com/CloudBarryChen/pj-tencentcartoon.git
