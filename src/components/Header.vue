@@ -44,30 +44,28 @@
 			<a href="#" class="minezone"></a>
 		</div>
 
-
 	</div>
 </template>
 
 <script>
 
-
-	export default {
-		name: "Header",
-		data: function () {
-			return {
-				navShow: false,
-			}
-		},
-		methods: {
-			isNavShow: function () {
-				if (this.navShow == false) {
-					this.navShow = true;
-				} else {
-					this.navShow = false;
-				}
-			},
-		},
-	}
+export default {
+  name: 'Header',
+  data: function () {
+    return {
+      navShow: false
+    }
+  },
+  methods: {
+    isNavShow: function () {
+      if (this.navShow == false) {
+        this.navShow = true
+      } else {
+        this.navShow = false
+      }
+    }
+  }
+}
 </script>
 
 <style scoped lang="scss">
@@ -100,7 +98,6 @@
 		top: .425rem;
 		left: 0;
 		width: 100%;
-
 
 		ul {
 			display: flex;

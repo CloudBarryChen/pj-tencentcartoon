@@ -30,58 +30,56 @@
 </template>
 
 <script>
-	import Axios from 'axios'
-	import path from 'path'
+import Axios from 'axios'
+import path from 'path'
 
-	export default {
-		name: "Search",
-		data:function () {
-			return {
-				holderShow:true,
-				porAni:false,
-				hot:{},
-				keyword:'',
-				searchRes:[]
-			}
-		},
-		methods:{
-			onSearch:function () {
-				console.log('onSearch');
-				this.holderShow = false;
-				this.porAni = true;
-			},
-			onCancel:function () {
-				console.log('onCancel');
-				if(!this.keyword){
-					this.holderShow = true;
-					this.porAni = false;
-				}
+export default {
+  name: 'Search',
+  data: function () {
+    return {
+      holderShow: true,
+      porAni: false,
+      hot: {},
+      keyword: '',
+      searchRes: []
+    }
+  },
+  methods: {
+    onSearch: function () {
+      console.log('onSearch')
+      this.holderShow = false
+      this.porAni = true
+    },
+    onCancel: function () {
+      console.log('onCancel')
+      if (!this.keyword) {
+        this.holderShow = true
+        this.porAni = false
+      }
+    },
+    getHots: function () {
+      var url = path.resolve('json', 'testhot.json')
+      Axios.get(url).then((res) => {
+        console.log(res)
+        this.hot = res.data.data
+      })
+    },
+    getSearch: function () {
+      var url = '/smart/search/smart?t=1568095291943&word=' + this.keyword
+      Axios.get(url).then((res) => {
+        // console.log(res);
+        this.searchRes = res.data.data || []
+        console.log(this.searchRes)
+      })
+    }
+  },
+  created () {
 
-			},
-			getHots:function () {
-				var url = path.resolve('json','testhot.json')
-				Axios.get(url).then( (res) =>{
-					console.log(res);
-					this.hot = res.data.data;
-				})
-			},
-			getSearch:function () {
-				var url = '/smart/search/smart?t=1568095291943&word='+this.keyword;
-				Axios.get(url).then( (res) =>{
-					//console.log(res);
-					this.searchRes = res.data.data || [];
-					console.log(this.searchRes);
-
-				})
-			},
-		},
-		created() {
-
-		},
-		mounted() {
-			this.getHots();
-		}
-	}
+  },
+  mounted () {
+    this.getHots()
+  }
+}
 </script>
 
 <style scoped lang="scss">
@@ -211,6 +209,5 @@
 			box-sizing: border-box;
 		}
 	}
-
 
 </style>
