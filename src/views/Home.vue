@@ -17,7 +17,7 @@ export default {
   name: 'home',
   components: {
     Myswiper,
-    countent,
+    countent
   }
 }
 

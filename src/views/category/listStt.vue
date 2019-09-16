@@ -47,43 +47,42 @@
 
 </template>
 <script>
-  // import { request } from 'http';
-  import request from '../../untils/axios'
+// import { request } from 'http';
+import request from '../../untils/axios'
 
+export default {
 
-  export default {
-
-    data() {
-      return {
-        active: '',
-        genxi: [],
-        rengqi: [],
-        shouc: []
-      }
-    },
-    methods: {
-      getData3() {
-        request.get('update4').then(res => {
-          this.genxi = res.data
-        })
-      },
-      getData4() {
-        request.get('update5').then(res => {
-          this.rengqi = res.data
-        })
-      },
-      getData5() {
-        request.get('update6').then(res => {
-          this.shouc = res.data
-        })
-      }
-    },
-    mounted() {
-      this.getData3()
-      this.getData4()
-      this.getData5()
+  data () {
+    return {
+      active: '',
+      genxi: [],
+      rengqi: [],
+      shouc: []
     }
+  },
+  methods: {
+    getData3 () {
+      request.get('update4').then(res => {
+        this.genxi = res.data
+      })
+    },
+    getData4 () {
+      request.get('update5').then(res => {
+        this.rengqi = res.data
+      })
+    },
+    getData5 () {
+      request.get('update6').then(res => {
+        this.shouc = res.data
+      })
+    }
+  },
+  mounted () {
+    this.getData3()
+    this.getData4()
+    this.getData5()
   }
+}
 </script>
 <style lang="scss" scoped>
   .list {

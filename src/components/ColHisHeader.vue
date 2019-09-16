@@ -22,25 +22,25 @@
 </template>
 
 <script>
-  export default {
-    name: 'ColHisHeader',
-    data: function () {
-      return {
-        flag: false,
-        select: '全选',
-        cancel: '取消全选'
-      }
-    },
-    methods: {
-      setDelete: function () {
-        this.flag = false
-      },
-      getDelete: function () {
-        this.flag = true
-      }
+export default {
+  name: 'ColHisHeader',
+  data: function () {
+    return {
+      flag: false,
+      select: '全选',
+      cancel: '取消全选'
     }
-
+  },
+  methods: {
+    setDelete: function () {
+      this.flag = false
+    },
+    getDelete: function () {
+      this.flag = true
+    }
   }
+
+}
 </script>
 
 <style lang="scss" scoped>

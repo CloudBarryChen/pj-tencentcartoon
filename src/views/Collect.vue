@@ -18,12 +18,11 @@
 import Footer from '../components/Footer.vue'
 import ColHisHeader from '../components/ColHisHeader.vue'
 
-
 export default {
   name: 'Collect',
   components: {
     ColHisHeader,
-    Footer,
+    Footer
   }
 }
 </script>

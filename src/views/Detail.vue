@@ -107,7 +107,6 @@
                     <a href="#">6</a>
                   </li>
 
-
                 </ul>
                 <div class="project-more">
                   <a href="#">
@@ -169,49 +168,49 @@
 </template>
 
 <script>
-  //引入接口
-  import {getDetailList} from '../api/index.js';
-  import  {getDetailList2} from '../api/index.js';
-  //引入vue
-  import Vue from 'vue';
-  //引入tabbar
-  import {Tabbar, TabItem} from 'mint-ui';
+// 引入接口
+import { getDetailList } from '../api/index.js'
+import { getDetailList2 } from '../api/index.js'
+// 引入vue
+import Vue from 'vue'
+// 引入tabbar
+import { Tabbar, TabItem } from 'mint-ui'
 
-  Vue.component(Tabbar.name, Tabbar);
-  Vue.component(TabItem.name, TabItem);
+Vue.component(Tabbar.name, Tabbar)
+Vue.component(TabItem.name, TabItem)
 
-  export default {
-    name: "Details",
-    data: function () {
-      return {
-        selected: "1",
-        detailList : [],
-        detailList2 : [],
-      }
-    },
-    methods : {
-      dataList :function () {
-        getDetailList().then((response) =>{
-          console.log(response.data);
-          if(response.status === 200){
-            this.detailList = response.data;
-          }
-        })
-      },
-      datalist2 : function () {
-        getDetailList2().then((response) =>{
-          console.log(response.data);
-          if(response.status === 200){
-            this.detailList2 = response.data;
-          }
-        })
-      }
-    },
-    mounted() {
-      this.dataList();
-      this.datalist2();
+export default {
+  name: 'Details',
+  data: function () {
+    return {
+      selected: '1',
+      detailList: [],
+      detailList2: []
     }
+  },
+  methods: {
+    dataList: function () {
+      getDetailList().then((response) => {
+        console.log(response.data)
+        if (response.status === 200) {
+          this.detailList = response.data
+        }
+      })
+    },
+    datalist2: function () {
+      getDetailList2().then((response) => {
+        console.log(response.data)
+        if (response.status === 200) {
+          this.detailList2 = response.data
+        }
+      })
+    }
+  },
+  mounted () {
+    this.dataList()
+    this.datalist2()
   }
+}
 </script>
 
 <style scoped>

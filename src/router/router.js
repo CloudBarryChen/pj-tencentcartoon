@@ -3,10 +3,6 @@ import Router from 'vue-router'
 import Home from '../views/Home.vue'
 import Search from '../views/Search.vue'
 
-const Collect = () => import('../views/Collect.vue')
-const History = () => import('../views/History.vue')
-const Aaa = () => import('../views/aaa.vue')
-
 import More from '../views/More-list.vue'
 import Countent from '../views/countent.vue'
 
@@ -16,6 +12,10 @@ import Topic from '../views/Topic.vue'
 import Category from '../views/category/index.vue'
 import ListAll from '../views/category/listAll.vue'
 import ListStt from '../views/category/listStt.vue'
+
+const Collect = () => import('../views/Collect.vue')
+const History = () => import('../views/History.vue')
+const Aaa = () => import('../views/aaa.vue')
 
 Vue.use(Router)
 
@@ -87,6 +87,6 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: () => import('../views/Login.vue')
-    },
+    }
   ]
 })

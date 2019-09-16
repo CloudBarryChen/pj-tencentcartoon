@@ -63,10 +63,10 @@ export default {
       } else {
         this.navShow = false
       }
-		},
-		hideNav:function(){
-			this.navShow = false;
-		}
+    },
+    hideNav: function () {
+      this.navShow = false
+    }
   }
 }
 </script>

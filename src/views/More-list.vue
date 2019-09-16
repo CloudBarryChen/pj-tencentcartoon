@@ -16,43 +16,43 @@
 </template>
 
 <script>
-  import {getDongmandata} from '../api/index.js'
+import { getDongmandata } from '../api/index.js'
 
-    export default {
-        name: "More-list",
-      data:function(){
-          return {
-            dongmanData:[],
-          }
-      },
-      methods:{
-          getMorelist:function () {
-            var p1 = getDongmandata()
-            p1.then((response) => {
-               if(response.status === 200){
-                 this.dongmanData = response.data
-                 console.log(response.data)
-               }
-            })
-          },
-        getHeader(){
-          var top = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
-          // console.log(top);
-          if(top > 200){
-             this.$refs.btn.style.opacity = 1;
-          }else {
-            this.$refs.btn.style.opacity = 0;
-          }
-        }
-      },
-      mounted() {
-        this.getMorelist();
-        window.addEventListener('scroll',this.getHeader)
-      },
-      destroyed (){ //当不在这个页面是，这个事件要销毁，不然会报错
-        window.removeEventListener('scroll', this.getHeader)
-      },
+export default {
+  name: 'More-list',
+  data: function () {
+    return {
+      dongmanData: []
     }
+  },
+  methods: {
+    getMorelist: function () {
+      var p1 = getDongmandata()
+      p1.then((response) => {
+        if (response.status === 200) {
+          this.dongmanData = response.data
+          console.log(response.data)
+        }
+      })
+    },
+    getHeader () {
+      var top = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+      // console.log(top);
+      if (top > 200) {
+        this.$refs.btn.style.opacity = 1
+      } else {
+        this.$refs.btn.style.opacity = 0
+      }
+    }
+  },
+  mounted () {
+    this.getMorelist()
+    window.addEventListener('scroll', this.getHeader)
+  },
+  destroyed () { // 当不在这个页面是，这个事件要销毁，不然会报错
+    window.removeEventListener('scroll', this.getHeader)
+  }
+}
 </script>
 
 <style scoped lang="scss">

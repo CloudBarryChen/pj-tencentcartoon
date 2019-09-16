@@ -177,31 +177,31 @@
 </template>
 
 <script>
-    export default {
-        name: "topic",
-        data : function(){
-          return {
-            flag:false,
-          }
-        },
-        methods : {
-          clickHandler(){
-            // alert(1);
-              var _this = this;
-              this.flag = true;
-              var timer = null;
-              timer = setInterval(()=>{
-                _this.flag = false;
-              },3000)
-              clearInterval(function(){
-                timer = null
-              })
-            var height = document.documentElement.clientHeight;
-            console.log(height);
-          }
-        },
-
+export default {
+  name: 'topic',
+  data: function () {
+    return {
+      flag: false
     }
+  },
+  methods: {
+    clickHandler () {
+      // alert(1);
+      var _this = this
+      this.flag = true
+      var timer = null
+      timer = setInterval(() => {
+        _this.flag = false
+      }, 3000)
+      clearInterval(function () {
+        timer = null
+      })
+      var height = document.documentElement.clientHeight
+      console.log(height)
+    }
+  }
+
+}
 </script>
 
 <style scoped>

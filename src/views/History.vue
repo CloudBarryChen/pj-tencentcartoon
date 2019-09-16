@@ -13,58 +13,58 @@
 </template>
 
 <script>
-  import {
-    getEqualData,
-    getAnimeList
-  } from '../api/index.js'
+import {
+  getEqualData,
+  getAnimeList
+} from '../api/index.js'
 
-  import aaa from '../views/aaa.vue'
-  import ColHisHeader from '../components/ColHisHeader.vue'
+import aaa from '../views/aaa.vue'
+import ColHisHeader from '../components/ColHisHeader.vue'
 
-  export default {
-    name: 'History',
-    components: {
-      ColHisHeader,
-    },
-    data: function () {
-      return {
-        idAll: [],
-        setId: []
-      }
-    },
-    methods: {
-      getId() {
-        /* console.log(Footer) */
-        /* var id = this.$route.params.id; */
-        /* console.log(id); */
-        getAnimeList().then((res) => {
-          /* console.log(res); */
-          if (res.status == 200) {
-            this.idAll = res.data
-            /* console.log(this.idAll) */
-          }
-        })
-      }
-    },
-    mounted: function () {
-      this.getId()
-      if (localStorage.getItem('time')) {
-        this.list = JSON.parse(localStorage.getItem('time'))
-        /* this.$refs.cont.innerHTML = null; */
-      } else {
-        this.list = []
-      }
-      /*console.log(this.list)*/
-    },
-    created: function () {
-      /* var id = this.$route.params.id; */
-      /* console.log(id + '是是是是'); */
-      // this.list = JSON.parse(localStorage.getItem("time"))||"[]";
-
-      /* console.log(this.list) */
-      /* console.log(1); */
+export default {
+  name: 'History',
+  components: {
+    ColHisHeader
+  },
+  data: function () {
+    return {
+      idAll: [],
+      setId: []
     }
+  },
+  methods: {
+    getId () {
+      /* console.log(Footer) */
+      /* var id = this.$route.params.id; */
+      /* console.log(id); */
+      getAnimeList().then((res) => {
+        /* console.log(res); */
+        if (res.status == 200) {
+          this.idAll = res.data
+          /* console.log(this.idAll) */
+        }
+      })
+    }
+  },
+  mounted: function () {
+    this.getId()
+    if (localStorage.getItem('time')) {
+      this.list = JSON.parse(localStorage.getItem('time'))
+      /* this.$refs.cont.innerHTML = null; */
+    } else {
+      this.list = []
+    }
+    /* console.log(this.list) */
+  },
+  created: function () {
+    /* var id = this.$route.params.id; */
+    /* console.log(id + '是是是是'); */
+    // this.list = JSON.parse(localStorage.getItem("time"))||"[]";
+
+    /* console.log(this.list) */
+    /* console.log(1); */
   }
+}
 </script>
 
 <style scoped lang="scss">

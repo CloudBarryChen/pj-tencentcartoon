@@ -9,28 +9,28 @@
 
 <script>
 
-  export default {
-    name:'login',
-    props:[''],
-    data () {
-      return {
+export default {
+  name: 'login',
+  props: [''],
+  data () {
+    return {
 
-      };
-    },
+    }
+  },
 
-    components: {},
+  components: {},
 
-    computed: {},
+  computed: {},
 
-    beforeMount() {},
+  beforeMount () {},
 
-    mounted() {},
+  mounted () {},
 
-    methods: {},
+  methods: {},
 
-    watch: {}
+  watch: {}
 
-  }
+}
 
 </script>
 <style lang='scss' scoped>

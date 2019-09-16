@@ -15,32 +15,32 @@
 </template>
 
 <script>
-  import {
-    getAnimeList
-  } from '../api/index.js'
-  import Aaa from '../views/aaa.vue'
-  export default {
-    name: 'Footer',
-    data: function () {
-      return {
-        list: []
-      }
-    },
-    methods: {
-      getList: function () {
-        getAnimeList().then((res) => {
-          this.list = res.data
-        })
-      },
-      aaa(bbb) {
-        this.$router.push('/aaa/' + bbb.id)
-      }
-    },
-    mounted() {
-      this.getList()
+import {
+  getAnimeList
+} from '../api/index.js'
+import Aaa from '../views/aaa.vue'
+export default {
+  name: 'Footer',
+  data: function () {
+    return {
+      list: []
     }
-
+  },
+  methods: {
+    getList: function () {
+      getAnimeList().then((res) => {
+        this.list = res.data
+      })
+    },
+    aaa (bbb) {
+      this.$router.push('/aaa/' + bbb.id)
+    }
+  },
+  mounted () {
+    this.getList()
   }
+
+}
 </script>
 
 <style scoped lang="scss">

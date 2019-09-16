@@ -9,14 +9,13 @@
 import Header from '@/components/Header.vue'
 
 export default {
-  components:{
-    Header,
+  components: {
+    Header
   }
 }
 </script>
 
 <style lang="scss">
-
 
 	@import './assets/font-awesome-4.7.0/css/font-awesome.min.css';
 
@@ -27,7 +26,7 @@ export default {
 
 	body, html {
 		font-size: .12rem;
-		
+
 	}
 
 	a {
@@ -84,9 +83,7 @@ export default {
 		-moz-osx-font-smoothing: grayscale;
 		text-align: center;
 		color: #2c3e50;
-    
-	}
 
-  
+	}
 
 </style>

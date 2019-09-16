@@ -29,35 +29,35 @@
 
 </template>
 <script>
-  import request from '../../untils/axios'
+import request from '../../untils/axios'
 
-  export default {
+export default {
 
-    data() {
-      return {
-        star: [],
-        urt: []
-      }
-    },
-    methods: {
-      getData1() {
-        request.get('/strong').then(res => {
-          this.star = res.data
-          console.log(res, 123)
-        })
-      },
-      getData2() {
-        request.get('/normal').then(res => {
-          this.urt = res.data
-          console.log(res, 123)
-        })
-      }
-    },
-    mounted() {
-      this.getData1()
-      this.getData2()
+  data () {
+    return {
+      star: [],
+      urt: []
     }
+  },
+  methods: {
+    getData1 () {
+      request.get('/strong').then(res => {
+        this.star = res.data
+        console.log(res, 123)
+      })
+    },
+    getData2 () {
+      request.get('/normal').then(res => {
+        this.urt = res.data
+        console.log(res, 123)
+      })
+    }
+  },
+  mounted () {
+    this.getData1()
+    this.getData2()
   }
+}
 </script>
 <style lang="scss" scoped>
   .nav-menu-box {

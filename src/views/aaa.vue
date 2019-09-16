@@ -18,7 +18,7 @@
 
 <script>
 import { getEqualData } from '../api/index.js'
-/*const getEqualData = () => import('../api/index.js')*/
+/* const getEqualData = () => import('../api/index.js') */
 export default {
   name: 'aaa',
   data: function () {
@@ -34,7 +34,7 @@ export default {
         /* console.log(res); */
         if (res.status == 200) {
           this.list.push(res.data[0])
-         /* console.log(res.data[0], 656565)*/
+          /* console.log(res.data[0], 656565) */
         }
       })
     },

@@ -71,76 +71,76 @@
 
 <script>
 
-  import {countentData,twoData,threeData} from '../api/index.js'
-    export default {
-        name: "countent",
-      data:function(){
-          return {
-            countentData:[],
-            twoTwoData:[],
-            threeData:[],
-          }
-      },
-     methods:{
-          getDongman:function () { //拿第一条数据
-            var p2 = countentData()
-            p2.then((response) => {
-              if(response.status === 200){
-                this.countentData = response.data
-                console.log(response.data)
-              }
-            })
-          },
-       getTwodata:function (){ //拿第二条数据
-         var p3 = twoData()
-         p3.then((response) => {
-           if(response.status === 200) {
-             this.twoTwoData = response.data
-             console.log(response.data);
-           }
-         })
-       },
-       getThreedata:function (){  //拿第三条数据
-         var p4 = threeData()
-         p4.then((response) => {
-           if(response.status === 200) {
-             this.threeData = response.data
-             console.log(response.data);
-           }
-         })
-       },
-       // clickHandlerDirect(currentItem){
-       //   var id = currentItem.Id;
-       //  // this.$router.push("/more/"+id)
-       //   console.log(this.$refs.content);
-       // },
-       getMore:function () {
-         this.$router.push("/more/23")
-       },
-       handScroll(){
-            //获取浏览器滚走的距离
-           var top = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
-         // console.log(top);
-           if(top > 500){
-             this.$refs.btn.style.opacity = 1;//浏览器滚到一定距离元素显示
-           }else {
-             this.$refs.btn.style.opacity = 0;//浏览器滚到一定距离元素隐藏
-           }
-       }
-     },
-
-      mounted() {
-        this.getDongman(),
-        this.getTwodata(),
-        this.getThreedata(),
-        window.addEventListener('scroll',this.handScroll);//监听一个window 滚动事件
-      },
-
-      destroyed (){ //当不在这个页面是，这个事件要销毁，不然会报错
-        window.removeEventListener('scroll', this.handScroll)
-      },
-
+import { countentData, twoData, threeData } from '../api/index.js'
+export default {
+  name: 'countent',
+  data: function () {
+    return {
+      countentData: [],
+      twoTwoData: [],
+      threeData: []
     }
+  },
+  methods: {
+    getDongman: function () { // 拿第一条数据
+      var p2 = countentData()
+      p2.then((response) => {
+        if (response.status === 200) {
+          this.countentData = response.data
+          console.log(response.data)
+        }
+      })
+    },
+    getTwodata: function () { // 拿第二条数据
+      var p3 = twoData()
+      p3.then((response) => {
+        if (response.status === 200) {
+          this.twoTwoData = response.data
+          console.log(response.data)
+        }
+      })
+    },
+    getThreedata: function () { // 拿第三条数据
+      var p4 = threeData()
+      p4.then((response) => {
+        if (response.status === 200) {
+          this.threeData = response.data
+          console.log(response.data)
+        }
+      })
+    },
+    // clickHandlerDirect(currentItem){
+    //   var id = currentItem.Id;
+    //  // this.$router.push("/more/"+id)
+    //   console.log(this.$refs.content);
+    // },
+    getMore: function () {
+      this.$router.push('/more/23')
+    },
+    handScroll () {
+      // 获取浏览器滚走的距离
+      var top = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+      // console.log(top);
+      if (top > 500) {
+        this.$refs.btn.style.opacity = 1// 浏览器滚到一定距离元素显示
+      } else {
+        this.$refs.btn.style.opacity = 0// 浏览器滚到一定距离元素隐藏
+      }
+    }
+  },
+
+  mounted () {
+    this.getDongman(),
+    this.getTwodata(),
+    this.getThreedata(),
+    window.addEventListener('scroll', this.handScroll)// 监听一个window 滚动事件
+  },
+
+  destroyed () { // 当不在这个页面是，这个事件要销毁，不然会报错
+    window.removeEventListener('scroll', this.handScroll)
+  }
+
+}
 </script>
 
 <style scoped lang="scss">
@@ -234,7 +234,7 @@
   .cartoon img{
     height: 1.7775rem;
     width: 3.03rem;
-    
+
   }
 
   .text-list{
@@ -267,7 +267,6 @@
     background-position: center;
     margin-top: 0.025rem;
     margin-bottom:0.45rem;
-    
 
   }
 
