@@ -8,25 +8,25 @@
 			</div>
 
 		</div>
-		<div class="nav" v-if="navShow">
+		<div class="nav" v-if="navShow" @click="hideNav">
 			<ul class="clearfix">
 				<li>
-					<router-link to="">
+					<router-link to="/">
 						<div></div>
 						<span>首页</span></router-link>
 				</li>
 				<li>
-					<router-link to="">
+					<router-link to="/collect">
 						<div></div>
 						<span>收藏</span></router-link>
 				</li>
 				<li>
-					<router-link to="">
+					<router-link to="/history">
 						<div></div>
 						<span>历史</span></router-link>
 				</li>
 				<li>
-					<router-link to="">
+					<router-link to="/category">
 						<div></div>
 						<span>分类</span></router-link>
 				</li>
@@ -63,7 +63,10 @@ export default {
       } else {
         this.navShow = false
       }
-    }
+		},
+		hideNav:function(){
+			this.navShow = false;
+		}
   }
 }
 </script>
@@ -74,6 +77,7 @@ export default {
 		background: white;
 		padding-top: .1rem;
 		box-sizing: border-box;
+		border-bottom: 1px solid #F5F5EE;
 		h1{
 			text-indent: -9999px;
 		}
@@ -176,4 +180,5 @@ export default {
 		height: .23rem;
 
 	}
+
 </style>

@@ -1,10 +1,22 @@
 <template>
 	<div id="app">
+    <Header class="headShow"></Header>
 		<router-view/>
 	</div>
 </template>
 
+<script>
+import Header from '@/components/Header.vue'
+
+export default {
+  components:{
+    Header,
+  }
+}
+</script>
+
 <style lang="scss">
+
 
 	@import './assets/font-awesome-4.7.0/css/font-awesome.min.css';
 
@@ -15,7 +27,7 @@
 
 	body, html {
 		font-size: .12rem;
-		overflow: hidden;
+		
 	}
 
 	a {
@@ -72,6 +84,9 @@
 		-moz-osx-font-smoothing: grayscale;
 		text-align: center;
 		color: #2c3e50;
+    
 	}
+
+  
 
 </style>

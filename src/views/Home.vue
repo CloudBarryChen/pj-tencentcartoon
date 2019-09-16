@@ -1,23 +1,23 @@
 <template>
-
   <div class="home">
-    <Header></Header>
-    <Myswiper></Myswiper>
 
+    <Myswiper></Myswiper>
+    <countent></countent>
   </div>
 </template>
 
 <script>
 
 // @ is an alias to /src
-import Header from '@/components/Header.vue'
+
 import Myswiper from '@/components/Myswiper.vue'
+import countent from './countent.vue'
 
 export default {
   name: 'home',
   components: {
-    Header,
-    Myswiper
+    Myswiper,
+    countent,
   }
 }
 
