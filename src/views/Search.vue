@@ -10,7 +10,7 @@
 		</div>
 		<div class="seaLis" v-if="searchRes.length">
 			<ul>
-				<li v-for="val in searchRes"><router-link to="">{{val.title}}</router-link></li>
+				<li v-for="(val,index) in searchRes" :key="index"><router-link to="">{{val.title}}</router-link></li>
 			</ul>
 		</div>
 		<div class="hot">
@@ -20,7 +20,7 @@
 			</div>
 			<div class="down">
 				<ul>
-					<li v-for="val in hot" >
+					<li v-for="(val,index) in hot" :key="index">
 						<router-link :to="val.url" >{{val.name}}</router-link>
 					</li>
 				</ul>

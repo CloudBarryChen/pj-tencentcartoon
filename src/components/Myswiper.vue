@@ -19,6 +19,7 @@
 import Vue from 'vue'
 // 引入轮播图
 import { Swipe, SwipeItem } from 'mint-ui'
+import path from 'path'
 
 import axios from 'axios'
 Vue.component(Swipe.name, Swipe)
@@ -36,8 +37,9 @@ export default {
   },
   methods: {
     goodList () {
-      axios.get('http://localhost:3000/img').then((res) => {
-        // console.log(res);
+      var url = path.resolve('json', 'bannerImg.json')
+      axios.get(url).then((res) => {
+        console.log(res)
         this.long = res.data
       })
     }
