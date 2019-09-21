@@ -30,7 +30,7 @@ export default new Router({
     },
     {
       path: '/search',
-      name: 'search',
+      name: '搜索',
       component: Search
     },
     {
@@ -40,12 +40,12 @@ export default new Router({
     },
     {
       path: '/collect',
-      name: 'collect',
+      name: '收藏',
       component: Collect
     },
     {
       path: '/history',
-      name: 'history',
+      name: '历史',
       component: History
     },
     {
@@ -60,7 +60,7 @@ export default new Router({
     },
     {
       path: '/detail/',
-      name: 'detail',
+      name: '详情',
       component: Detail
     },
     {
@@ -70,22 +70,22 @@ export default new Router({
     },
     {
       path: '/category',
-      name: 'index',
+      name: '分类',
       component: Category
     },
     {
       path: '/listAll',
-      name: 'listAll',
+      name: '分类-1',
       component: ListAll
     },
     {
       path: '/listStt',
-      name: 'listStt',
+      name: '分类-2',
       component: ListStt
     },
     {
       path: '/login',
-      name: 'login',
+      name: '登陆',
       component: () => import('../views/Login.vue')
     }
   ]

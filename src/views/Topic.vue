@@ -197,7 +197,7 @@ export default {
         timer = null
       })
       var height = document.documentElement.clientHeight
-      console.log(height)
+      // console.log(height)
     }
   }
 

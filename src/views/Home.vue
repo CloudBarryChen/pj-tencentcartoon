@@ -1,13 +1,11 @@
 <template>
   <div class="home">
-
     <Myswiper></Myswiper>
     <countent></countent>
   </div>
 </template>
 
 <script>
-
 // @ is an alias to /src
 
 import Myswiper from '@/components/Myswiper.vue'
@@ -18,11 +16,20 @@ export default {
   components: {
     Myswiper,
     countent
+  },
+  methods: {
+    isTitleShow: function (arg) {
+      this.$store.commit('titleShowHandler', arg)
+    }
+  },
+  mounted () {
+    this.isTitleShow(true)
+  },
+  destroyed () {
+    this.isTitleShow(false)
   }
 }
-
 </script>
 
 <style>
-
 </style>

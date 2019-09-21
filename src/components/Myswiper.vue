@@ -39,7 +39,7 @@ export default {
     goodList () {
       var url = path.resolve('json', 'bannerImg.json')
       axios.get(url).then((res) => {
-        console.log(res)
+        // console.log(res)
         this.long = res.data
       })
     }

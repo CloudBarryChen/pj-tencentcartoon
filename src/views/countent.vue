@@ -87,7 +87,7 @@ export default {
       p2.then((response) => {
         if (response.status === 200) {
           this.countentData = response.data
-          console.log(response.data)
+          // console.log(response.data)
         }
       })
     },
@@ -96,7 +96,7 @@ export default {
       p3.then((response) => {
         if (response.status === 200) {
           this.twoTwoData = response.data
-          console.log(response.data)
+          // console.log(response.data)
         }
       })
     },
@@ -105,7 +105,7 @@ export default {
       p4.then((response) => {
         if (response.status === 200) {
           this.threeData = response.data
-          console.log(response.data)
+          // console.log(response.data)
         }
       })
     },

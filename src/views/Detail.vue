@@ -1,6 +1,6 @@
 <template>
   <div class="detail">
-    <div class="container" v-for="ele in detailList2">
+    <div class="container" v-for="(ele,index) in detailList2" :key="index">
       <!--//banner部分-->
       <div class="banner" >
         <div class="banner-img">
@@ -60,7 +60,7 @@
               <h2>骚年们都在看</h2>
               <div class="nav-list-container">
                 <ul>
-                  <li v-for="item in detailList">
+                  <li v-for="(item,index) in detailList" :key="index">
                     <img :src="item.img" alt="">
                     <h3>{{item.title}}</h3>
                     <p>{{item.infos}}</p>
@@ -120,7 +120,7 @@
               <h2>骚年们都在看</h2>
               <div class="nav-list-container">
                 <ul>
-                  <li v-for="item in detailList">
+                  <li v-for="(item,index) in detailList" :key="index">
                     <img :src="item.img" alt="">
                     <h3>{{item.title}}</h3>
                     <p>{{item.infos}}</p>
@@ -191,7 +191,7 @@ export default {
   methods: {
     dataList: function () {
       getDetailList().then((response) => {
-        console.log(response.data)
+        // console.log(response.data)
         if (response.status === 200) {
           this.detailList = response.data
         }
@@ -199,7 +199,7 @@ export default {
     },
     datalist2: function () {
       getDetailList2().then((response) => {
-        console.log(response.data)
+        // console.log(response.data)
         if (response.status === 200) {
           this.detailList2 = response.data
         }

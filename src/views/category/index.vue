@@ -43,13 +43,13 @@ export default {
     getData1 () {
       request.get('/strong').then(res => {
         this.star = res.data
-        console.log(res, 123)
+        // console.log(res, 123)
       })
     },
     getData2 () {
       request.get('/normal').then(res => {
         this.urt = res.data
-        console.log(res, 123)
+        // console.log(res, 123)
       })
     }
   },

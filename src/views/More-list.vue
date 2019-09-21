@@ -1,7 +1,7 @@
 <template>
      <div class="box">
          <ul class="list-box">
-            <li class="list-li" v-for="ele in dongmanData">
+            <li class="list-li" v-for="(ele,index) in dongmanData" :key="index">
               <a href="#"><img :src=" ele.url"></a>
               <div class="list-right">
                   <strong>{{ ele.name }}</strong>
@@ -31,7 +31,7 @@ export default {
       p1.then((response) => {
         if (response.status === 200) {
           this.dongmanData = response.data
-          console.log(response.data)
+          // console.log(response.data)
         }
       })
     },

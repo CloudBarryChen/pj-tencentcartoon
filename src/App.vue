@@ -1,6 +1,6 @@
 <template>
 	<div id="app">
-    <Header class="headShow"></Header>
+    <Header v-if="$store.state.headerShow"></Header>
 		<router-view/>
 	</div>
 </template>
@@ -18,6 +18,8 @@ export default {
 <style lang="scss">
 
 	@import './assets/font-awesome-4.7.0/css/font-awesome.min.css';
+
+	$global-color:#ff9a6a;
 
 	html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img, figure, figcaption, fieldset {
 		margin: 0;

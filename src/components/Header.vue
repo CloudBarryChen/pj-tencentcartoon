@@ -1,7 +1,8 @@
 <template>
 	<div>
 		<div class="header" id="header">
-			<div class="title"><h1>腾讯动漫</h1></div>
+			<div class="title" v-if="$store.state.titleShow"><h1>腾讯动漫</h1></div>
+			<Back  v-if="!$store.state.titleShow"></Back>
 			<div class="left">
 				<router-link class="search" to="/search"></router-link>
 				<a href="#" class="menu" @click="isNavShow"></a>
@@ -41,7 +42,7 @@
 						<span>反馈</span></router-link>
 				</li>
 			</ul>
-			<a href="#" class="minezone"></a>
+			<router-link to="/login" class="minezone"></router-link>
 		</div>
 
 	</div>
@@ -49,12 +50,17 @@
 
 <script>
 
+import Back from './Back.vue'
+
 export default {
   name: 'Header',
   data: function () {
     return {
       navShow: false
     }
+  },
+  components: {
+    Back
   },
   methods: {
     isNavShow: function () {
@@ -67,6 +73,11 @@ export default {
     hideNav: function () {
       this.navShow = false
     }
+
+  },
+
+  mounted () {
+
   }
 }
 </script>
